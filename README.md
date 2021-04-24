@@ -8,10 +8,9 @@ function quickSort(arr){
   const pivot = arr.pop();
   const leftSide = [];
   const rightSide = [];
-  for(let i of arr) i <= pivot ? leftSide.push(i) : rightSide.push(i)
-  return quickSort(leftSide).concat([pivot]).concat(quickSort(rightSide))
+  for(let i of arr) i <= pivot ? leftSide.push(i) : rightSide.push(i);
+  return [...quickSort(leftSide), pivot, ...quickSort(rightSide)]
 }
-
 
 let unsortedArray = [
    6,  0,  2, 31, 39, 23,  8, 33, 24, 24,
